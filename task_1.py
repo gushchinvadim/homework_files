@@ -15,11 +15,8 @@ with open('recipes.txt') as f:
         separate = f.readline()
         cook_book.update(dep)
     cook_book[dish_name] = new_list
-    # pprint()
-    # allow_unicode = True, default_flow_style = False
 
-
-pprint (cook_book)
+print (f'cook_book = {cook_book}')
 
   
     
