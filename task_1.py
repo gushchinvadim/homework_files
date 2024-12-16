@@ -1,27 +1,25 @@
+from pprint import pprint
 cook_book = {}
-
-# def my_cook_book(): 
 
 with open('recipes.txt') as f:
     for line in f:
         dish_name = line.strip()
-        # print(dish_name)
         new_list = []
-        count = f.readline()
+        count = f.readline().strip()
 
-        # print(count)
-        # print(count)
-        
-        for i in range(int(count)):
-            dish_ing = f.readline()
-            # print(dish_ing)
-            ingredient_name, quantity, measure  = dish_ing.strip().split('|')
+        for _ in range(int(count)):
+            dish_ing = f.readline().strip()
+            ingredient_name, quantity, measure  = dish_ing.split('|')
             new_list.append({'ingredient_name': ingredient_name, 'quantity': quantity,'measure': measure})
             dep = {dish_name: new_list}
         separate = f.readline()
         cook_book.update(dep)
+    cook_book[dish_name] = new_list
+    # pprint()
+    # allow_unicode = True, default_flow_style = False
 
-    print(f'cook_book = {cook_book}')
+
+pprint (cook_book)
 
   
     
